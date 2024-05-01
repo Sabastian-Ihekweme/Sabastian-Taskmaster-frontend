@@ -1,0 +1,124 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  z-index: 2;
+  display: flex;
+  left: 0px;
+  top: 0px;
+  height: 70px;
+  background-color: #e8e8e8;
+  border-bottom: solid #dfdbdb;
+}
+
+.taskmaster-logo {
+  margin-top: 6px;
+  width: 198px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 85%;
+  min-width: 300px;
+}
+
+.user-icon {
+  margin: 0;
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+  padding-left: 18px;
+}
+
+.username-icon {
+  display: flex;
+}
+
+.username, .user-icon {
+
+  margin: 0;
+  font-family: Arial;
+  font-size: 25px;
+}
+
+.username {
+  padding-top: 25px;
+}
+.user-icon {
+  padding-top: 15px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  height: 157px;
+  z-index: 1;
+  margin-top: auto;
+
+}
+
+.layer-one-footer {
+  padding-top: 23px;
+  display: flex;
+  width: 100%;
+  font-family: arial;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.layer-two-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.instagram-icon, .x-icon, .tiktok-icon{
+  padding-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+.layer-three-footer {
+  display: flex;
+  justify-content: center;
+  font-family: Arial;
+  font-size: 14px;
+  color: rgb(213, 213, 213);
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  padding-right: 7px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.back-button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: Arial;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.775);
+}
+.back-button:active {
+  background-color: black
+}

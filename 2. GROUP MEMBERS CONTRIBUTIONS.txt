@@ -1,0 +1,36 @@
+HTML
+Welcome page- Odafe
+Sign up page- Dixon
+Login page- Sabastian
+Dashboard- Sabastian
+
+Manage tasks page- Jonathan
+To-do List page- Moria
+Journal page- Amaka
+Reading list page- Doreen
+Yearly goals/future plans page- Kucheli
+Completed tasks page- Ajurii
+Reminders page- Bella
+
+Notes page- Elivs
+
+
+CSS
+Welcome page- Sabastian
+Sign up page- Sabastian
+Login page- Sabastian
+Dashboard- Sabastian
+
+Manage Tasks page- Moria
+Todo-List page- Moria
+Journal page- Amaka
+Reading List page- Doreen
+Yearly goals/future plans page- Doreen
+Completed tasks page- Ajurii
+Reminders page- Ajurii
+
+Notes page- Amaka
+
+
+JAVASCRIPT
+Sabastian

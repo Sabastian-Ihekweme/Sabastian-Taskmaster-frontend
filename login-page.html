@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style-login.css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <img src="taskmaster-logo.png" class="taskmaster-logo-login">
+    
+    <div class="drawings-login">
+    <img src="drawing-five.png" class="drawing-five">
+    <img src="drawing-four.png" class="drawing-four">
+    <img src="drawing-six.png" class="drawing-six">
+    <img src="drawing-seven.png" class="drawing-seven">
+    </div>
+
+    <div class="login-div">
+
+      <div class="layer-one-login">
+        Login
+      </div>
+
+      <div class="layer-two-login">
+        <input type="text" placeholder="Username" class="username"> 
+        <img src="user-icon.png" class="user-icon">
+        <br>
+        <input type="password" placeholder="Password" class="password"> 
+        <img src="password-icon.png" class="password-icon">
+      </div>
+
+      <div class="layer-three-login">
+        <span class="remember-me"> <input type="checkbox">Remember me</span>
+      </div>
+
+      <div class="layer-four-login">
+        <button class="login-button" onClick="login();">Login</button>
+      </div>
+
+      <div class="layer-five-login">
+        Don't have an account?? <a class="sign-up-button" href="">Sign up</a>
+      </div>
+
+    </div>
+
+  <script>
+
+function login() {
+        let usernameInput = document.querySelector('.username');
+        let passwordInput = document.querySelector('.password');
+        let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+        let found = false;
+
+        for (let i = 0; i < accounts.length; i++) {
+          if (accounts[i].username === usernameInput.value && accounts[i].password === passwordInput.value) {
+            alert('Login successful!');
+            found = true;
+            // Redirect to the dashboard page
+            window.location.href = 'dashboard.html';
+            break;
+          }
+        }
+
+        if (!found) {
+          alert('Invalid username or password!');
+        }
+      }
+
+  </script>
+  </body>
+</html>

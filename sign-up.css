@@ -1,0 +1,74 @@
+.body {
+  margin-left: 60px;
+}
+
+.drawing-five {
+  position: fixed;
+  width: 500px;
+  height: 700px;
+}
+
+.main-body {
+  margin-left: 500px;
+  width: 150px;
+  margin-left: 500px;
+}
+
+.taskmaster-logo {
+  margin-top:100px;
+  width: 250px;
+}
+
+.wrapper {
+  font-family: Arial;
+}
+
+.name {
+  display: flex;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+  width: 1000px;
+}
+
+input {
+  padding-left: 10px;
+  font-family: Arial;
+  font-size: 17px;
+  width: 380px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color: #b8b7b7;
+}
+
+.input-box {
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 380px;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.707);
+}
+button:active {
+  background-color: black;
+}
+
+
+

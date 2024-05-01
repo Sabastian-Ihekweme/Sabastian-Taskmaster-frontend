@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taskmaster - Yearly Goals and Future Plans</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-general.css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            padding: 20px 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            z-index: 1;
+        }
+
+        .column {
+            z-index: 1;
+            flex: 5;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px;
+            border: 1px solid #928d86;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li:last-child {
+            margin-bottom: none;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .update-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .update-button:hover {
+            background-color: #555;
+        }
+
+        .original {
+            opacity: 0.5;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .image-container {
+           text-align: center;
+           margin-top: 20px;
+           margin-bottom: 20px;
+        }
+
+         .image {
+            outline: none;
+            border: none;
+            margin-top: 3px;
+            width: 200px; /* Adjust the width as needed */
+        }
+
+        .add-button {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: background-color 0.1s;
+        }
+        .add-button:hover {
+            background-color: rgba(0, 0, 0, 0.626)
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="header">
+        <div class="logo">
+        <a href="dashboard.html">
+        <img src="taskmaster-logo.png" class="taskmaster-logo">
+        </a>
+        </div>
+        <div class="username-icon">
+        <p class="username"><span class="User">User</span></p><img src="user-icon.png" class="user-icon">
+        </div>
+      </div>
+
+      <a href="manage-tasks.html"><button class="back-button">Back</button></a>
+    <div class="yearly-goals-body">
+        <div class="image-container">
+            <img src="drawing-eight.jpg" alt="image of man reading" class="image"> 
+        </div>
+        
+        <div class="container">
+            <div class="column" id="yearly-goals">
+                <h2>Yearly Goals</h2>
+                <ul class="yearly-goals">
+
+                </ul>
+                <input type="text" class="new-goal" id="new-goal" placeholder="Add a new goal">
+                <button class="add-button" onclick="addNewGoal()">Add New Goal</button>
+            </div>
+            <div class="column" id="future-plans">
+                <h2>Future Plans</h2>
+                <ul class="future-plans">
+
+                </ul>
+                <input type="text" class="new-plan" id="new-plan" placeholder="Add a new plan">
+                <button class="add-button" onclick="addNewPlan()">Add New Plan</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+  // Function to add a new yearly goal
+   // Define variables for goals and plans
+let yearlyGoals = [];
+let futurePlans = [];
+
+// Retrieve HTML elements
+let yearlyGoal = document.querySelector('.yearly-goals');
+let futurePlan = document.querySelector('.future-plans');
+let newGoal = document.querySelector('.new-goal');
+let newPlan = document.querySelector('.new-plan');
+
+// Function to load saved goals and plans from local storage
+function loadSavedData() {
+    // Load yearly goals from local storage
+    const savedYearlyGoals = localStorage.getItem('yearlyGoals');
+    if (savedYearlyGoals) {
+        yearlyGoals = JSON.parse(savedYearlyGoals);
+        yearlyGoals.forEach(goal => {
+            yearlyGoal.innerHTML += `<li class="checklist-item"><input type="checkbox" name="goals"><label>${goal}</label></li>`;
+        });
+    }
+
+    // Load future plans from local storage
+    const savedFuturePlans = localStorage.getItem('futurePlans');
+    if (savedFuturePlans) {
+        futurePlans = JSON.parse(savedFuturePlans);
+        futurePlans.forEach(plan => {
+            futurePlan.innerHTML += `<li class="checklist-item"><input type="checkbox" name="plans"><label>${plan}</label></li>`;
+        });
+    }
+}
+
+// Function to save goals and plans to local storage
+function saveData() {
+    localStorage.setItem('yearlyGoals', JSON.stringify(yearlyGoals));
+    localStorage.setItem('futurePlans', JSON.stringify(futurePlans));
+}
+
+// Function to add a new yearly goal
+function addNewGoal() {
+    const goal = newGoal.value.trim();
+    if (goal !== '') {
+        yearlyGoals.push(goal);
+        yearlyGoal.innerHTML += `<li class="checklist-item"><input type="checkbox" name="goals"><label>${goal}</label></li>`;
+        newGoal.value = '';
+        saveData(); // Save data to local storage
+    }
+}
+
+// Function to add a new future plan
+function addNewPlan() {
+    const plan = newPlan.value.trim();
+    if (plan !== '') {
+        futurePlans.push(plan);
+        futurePlan.innerHTML += `<li class="checklist-item"><input type="checkbox" name="plans"><label>${plan}</label></li>`;
+        newPlan.value = '';
+        saveData(); // Save data to local storage
+    }
+}
+
+// Load saved data when the page loads
+window.onload = loadSavedData;
+
+
+</script>
+</body>
+</html>

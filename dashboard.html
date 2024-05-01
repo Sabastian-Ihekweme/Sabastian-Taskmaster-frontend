@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style-dashboard.css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="logo">
+      <a href="dashboard.html">
+      <img src="taskmaster-logo.png" class="taskmaster-logo">
+      </a>
+      </div>
+      <p class="username"><span class="User" id="loggedInUser"></span></p><img src="user-icon.png" class="user-icon">    </div>
+
+
+    <div class="sidebar">
+
+      <div class="logo">
+        <img src="taskmaster-logo.png" class="taskmaster-logo">
+        </div>
+
+      <a href="manage-tasks.html" class="sidebar-button">
+        <button  class="sidebar-button manage-tasks">Manage tasks</button>
+      </a>
+
+      <a href="notes.html" class="sidebar-button">
+        <button  class="sidebar-button">Notes</button>
+      </a>
+
+      <a href="calendar.html" class="sidebar-button">
+        <button  class="sidebar-button">Calendar</button>
+      </a>
+      
+    </div>
+
+
+    <div class="dashboard">
+      <h1>Dashboard</h1>
+
+      <h2>You have <span class="task-count">0</span> tasks remaining...</h2>
+      <p class="comment">Good Job!</p>
+
+
+      <div class="task-div">
+        Tasks
+      </div>
+
+      <div class="task-list">
+      </div>
+
+
+ 
+    </div>
+
+
+
+
+<script>
+  // Retrieve tasks from local storage
+  let tasks = JSON.parse(localStorage.getItem('tasks'));
+  let taskList = document.querySelector('.task-list');
+  let taskCount = document.querySelector('.task-count');
+  let comment = document.querySelector('.comment');
+
+  // Function to display username
+  function displayUsername() {
+    // Retrieve the username from wherever it's stored
+    let username = getUsername(); // Example: replace getUsername() with the actual function to retrieve the username
+
+    // Display the username in the header
+    document.getElementById('loggedInUser').textContent = username;
+  }
+
+  // Call the function to display the username when the page loads
+  window.onload = displayUsername;
+
+  // Function to retrieve the username from wherever it's stored
+  function getUsername() {
+    // Example: retrieve the username from local storage
+    return localStorage.getItem('username');
+  }
+
+  // Function to display tasks
+  function displayTasks() {
+    // Initialize a string to store HTML content
+    let tasksHTML = '';
+
+    // Populate task list
+    for (let i = 0; i < tasks.length; i++) {
+      tasksHTML += `
+        <div class="task-list">
+          <p class="task-name">${tasks[i].name}</p>
+          <p class="date">${tasks[i].date}</p>
+        </div>
+      `;
+    }
+
+    // Set the HTML content to the taskList element
+    taskList.innerHTML = tasksHTML;
+  }
+
+  // Update task count
+  taskCount.innerText = tasks.length;
+
+  // Update comment based on task count
+  if (tasks.length === 0) {
+    comment.innerText = 'Good Job!';
+  } else if (tasks.length > 0 && tasks.length < 5) {
+    comment.innerText = 'Almost there!';
+  } else if (tasks.length >= 5) {
+    comment.innerText = 'You get work oh!';
+  }
+
+  // Add an event listener to execute displayTasks function when the page loads
+  window.onload = function() {
+    displayTasks();
+    displayUsername();
+  };
+</script>
+  </body>
+</html>

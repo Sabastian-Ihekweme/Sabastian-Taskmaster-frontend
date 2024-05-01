@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  padding: 0
+}
+
+.header {
+  z-index: 2;
+  display: flex;
+  left: 0px;
+  top: 0px;
+  height: 70px;
+  background-color: #e8e8e8;
+  border-bottom: solid #dfdbdb;
+}
+
+.taskmaster-logo {
+  margin-top: 6px;
+  width: 198px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 85%;
+  min-width: 300px;
+}
+
+.user-icon {
+  margin: 0;
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+  padding-left: 18px;
+}
+
+.username-icon {
+  display: flex;
+}
+
+.username, .user-icon {
+
+  margin: 0;
+  font-family: Arial;
+  font-size: 25px;
+}
+
+.username {
+  padding-top: 25px;
+}
+.user-icon {
+  padding-top: 15px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  height: 157px;
+  z-index: 1;
+  margin-top: auto;
+
+}
+
+.layer-one-footer {
+  padding-top: 23px;
+  display: flex;
+  width: 100%;
+  font-family: arial;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.layer-two-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.instagram-icon, .x-icon, .tiktok-icon{
+  padding-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+.layer-three-footer {
+  display: flex;
+  justify-content: center;
+  font-family: Arial;
+  font-size: 14px;
+  color: rgb(213, 213, 213);
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  padding-right: 7px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.completed-tasks-body {
+  margin-left: 30px;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: 1.5px solid black underline;
+}
+
+h2 {
+  font-family: Arial;
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+.points {
+  color: green;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  font-family: Arial;
+  color: rgba(113, 112, 112, 0.658);
+  font-size: 13px;
+}
+
+.task-box {
+
+  min-width: 400px;
+  max-width: 400px;
+  font-family: Arial;
+  margin: 10px;
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.completed-tasks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.completed-button {
+  background-color: rgb(23, 202, 23);
+  color: white;
+  font-family: arial;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid black;
+  font-size: 17px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-top: 20px;
+
+}
+
+.importance {
+  display: flex;
+}
+
+.index {
+  color: white;
+}
+
+.important-button, .medium-button, .trivial-button {
+  margin-right: 5px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  border: none;
+}
+
+.description {
+  font-size: 25px;
+}
+
+.important-button {
+  background-color: red;
+}
+.medium-button {
+  background-color: yellow;
+}
+.trivial-button {
+  background-color: rgb(14, 200, 14);
+}
+
+.due-date {
+  color: grey;
+  font-size: 15px;
+}
+.complete-button {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.complete-button:active {
+  background-color: rgba(0, 0, 0, 0.299);
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  margin-left: 250px;
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+.delete-button:active {
+  color: rgb(122, 0, 0);
+}
+
+.task-name {
+  color: black;
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+

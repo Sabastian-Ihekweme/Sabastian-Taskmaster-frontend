@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Journal</title>
+  <link rel="stylesheet" href="newjournal.css"> 
+  <link rel="icon" href="logo2.png" type="image/x-icon">
+</head>
+<body>
+
+  <a href="journal.html"><button class="back-button">Back</button></a>
+
+<div class="container">
+  <input type="text" class="note-title">
+  <textarea class="entry-textarea" id="entryText" placeholder="Write your entry......."></textarea>
+  <button class="submit-button" onclick="
+  if (!entryContent.value) {
+    alert('Write your entry!');
+  } else {
+  saveEntry();
+  clearTextArea();
+  }
+
+  ">Save</button>
+</div>
+
+<div class="journal-entries">
+  <p class="users-journal">User's Journal</p>
+
+  <div class="entries">
+   
+  </div>
+</div>
+
+
+
+
+<script>
+
+let entryName;
+let entryContent;
+let entryList;
+
+entryName = document.querySelector('.note-title');
+entryName.value = 'Untitled';
+entryContent = document.querySelector('.entry-textarea');
+entryList = document.querySelector('.entries');
+
+// Load journal entries from local storage
+let journalEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+let serial = journalEntries.length > 0 ? journalEntries[journalEntries.length - 1].index + 1 : 1;
+
+function saveEntry() {
+  let journal = {
+    name: 'Untitled',
+    content: 'blank',
+    index: serial++
+  };
+
+  if (!entryContent.value) {
+    alert('Write your entry!');
+  } else {
+    journal.name = entryName.value;
+    journal.content = entryContent.value;
+
+    // Check if entry already exists
+    let existingEntryIndex = journalEntries.findIndex(entry => entry.name === journal.name);
+    if (existingEntryIndex !== -1) {
+      // Update existing entry
+      journalEntries[existingEntryIndex].content = journal.content;
+      alert("Entry has been updated!");
+    } else {
+      journalEntries.push(journal);
+      entryList.innerHTML += `<p class="entry-list"><button class="entry-title" onclick="displayEntry(${journal.index})">${journal.name}</button></p>`;
+    }
+
+    // Save journal entries to local storage
+    localStorage.setItem('journalEntries', JSON.stringify(journalEntries));
+  }
+}
+
+// Function to display entry content in textarea
+function displayEntry(index) {
+  let entry = journalEntries.find(entry => entry.index === index);
+  if (entry) {
+    entryName.value = entry.name;
+    entryContent.value = entry.content;
+  }
+}
+
+// Function to clear text area
+function clearTextArea() {
+  entryName.value = 'Untitled';
+  entryContent.value = '';
+}  
+
+function clearStorage() {
+  localStorage.clear();
+  alert('Local Storage has been cleard');
+}
+
+</script>
+
+
+
+</body>
+</html>

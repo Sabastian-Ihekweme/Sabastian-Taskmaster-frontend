@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Completed Tasks</title>
+<link rel="stylesheet" type="text/css" href="completedtask.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width",initial-scale=1.0>
+<link rel="icon" href="logo2.png" type="image/x-icon">
+<link rel="stylesheet" href="style-completed.css">
+<link rel="stylesheet" href="style-general.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <a href="dashboard.html">
+            <img src="taskmaster-logo.png" class="taskmaster-logo">
+        </a>
+    </div>
+    <div class="username-icon">
+        <p class="username"><span class="User">User</span></p><img src="user-icon.png" class="user-icon">
+    </div>
+</div>
+
+<a href="manage-tasks.html"><button class="back-button">Back</button></a>
+<div class="completed-tasks-body">
+    <h1>VIEW YOUR COMPLETED TASKS</h1>
+
+    <h2>Total Points: <span id="total-points">0</span></h2>
+    <p>You have 3 points for each completed task</p>
+
+    <hr style="width: 85% auto; margin-top: 40px;">
+    <hr>
+
+    <div class="completed-tasks" id="completed-tasks-list">
+        <!-- Completed tasks will be displayed here -->
+    </div>
+</div>
+
+
+
+<script>
+// Function to retrieve completed tasks from local storage
+function getCompletedTasks() {
+    return JSON.parse(localStorage.getItem('completedTasks')) || [];
+}
+
+// Function to display completed tasks
+function displayCompletedTasks() {
+    let totalPoints = 0;
+    let completedTasksList = document.getElementById("completed-tasks-list");
+    completedTasksList.innerHTML = ""; // Clear previous entries
+
+    let completedTasks = getCompletedTasks();
+
+    completedTasks.forEach(task => {
+        let taskPoints = 0;
+        totalPoints += 3;
+
+        // Create task element
+        let taskElement = document.createElement("div");
+        taskElement.classList.add("completed-task");
+        taskElement.innerHTML = `
+            <div class="task-box">
+            <p class="task-name">${task.name}</p>
+            <button class="completed-button">Completed</button>
+            </div>
+            `;
+        completedTasksList.appendChild(taskElement);
+    });
+
+    // Update total points
+    document.getElementById("total-points").textContent = totalPoints;
+}
+
+// Function to go back to previous page
+function goBack() {
+    window.history.back();
+}
+
+// Display completed tasks when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    displayCompletedTasks();
+});
+</script>
+</body>
+</html>

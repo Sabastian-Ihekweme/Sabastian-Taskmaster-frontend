@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reminders</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style-reminders.css" />
+  <link rel="stylesheet" href="style-general.css">
+  <link rel="icon" href="logo2.png" type="image/x-icon">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+    <a href="dashboard.html">
+    <img src="taskmaster-logo.png" class="taskmaster-logo">
+    </a>
+    </div>
+    <div class="username-icon">
+    <p class="username"><span class="User">User</span></p><img src="user-icon.png" class="user-icon">
+    </div>
+  </div>
+
+<div class="reminders-body">
+  <a href="manage-tasks.html"><button class="back-button">Back</button></a>
+  <h1>REMINDERS</h1>
+
+  <p class="write-remiders">Write your reminders here...</p>
+  <textarea type="text" class="reminders" id="reminders"></textarea>
+</div>
+
+
+
+<script>
+  // Retrieve reminders from local storage and display them
+  document.addEventListener('DOMContentLoaded', function() {
+    const remindersTextArea = document.getElementById('reminders');
+    remindersTextArea.value = localStorage.getItem('reminders') || '';
+
+    // Save reminders to local storage when the textarea content changes
+    remindersTextArea.addEventListener('input', function() {
+      localStorage.setItem('reminders', remindersTextArea.value);
+    });
+  });
+</script>
+
+</body>
+</html>

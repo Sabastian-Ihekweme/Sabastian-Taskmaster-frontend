@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* height: 100vh; */
+    text-align: center;
+    background-color: #fff;
+    background-image: url('drawing-one.png');
+    /* background-size: 30%; */
+    background-size: 300px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.div-columns {
+    display: flex;
+    justify-content: space-around;
+    height: 250px;
+}
+
+.column-1,
+.column-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button {
+    width: 200px;
+    padding: 10px 0px;
+}
+
+
+footer {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #090000;
+    color: #fff;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #080808;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.1s;
+    transition: color 0.1s;
+    margin-bottom: 10%;
+}
+
+button:hover {
+    background-color: #141515;
+    color: white;
+}
+
+h1 {
+    color: #787777;
+    margin-bottom: 100px;
+
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    height: 157px;
+    z-index: 1;
+    margin-top: auto;
+  
+  }
+  
+  .layer-one-footer {
+    padding-top: 23px;
+    display: flex;
+    width: 100%;
+    font-family: arial;
+    font-size: 16px;
+    justify-content: center;
+  }
+  
+  .layer-two-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .instagram-icon, .x-icon, .tiktok-icon{
+    padding-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .layer-three-footer {
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+  }
+
+  .header {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    left: 0px;
+    top: 0px;
+    height: 70px;
+    background-color: #e8e8e8;
+  }
+  
+  .taskmaster-logo {
+    width: 198px;
+    cursor: pointer;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 5000px;
+    margin-top: 5px;
+  }
+  
+.logo {
+    width: 90%;
+    min-width: 300px;
+    background-color: #e8e8e8;
+    border-bottom: solid #dfdbdb;
+}
+  
+  .user-icon {
+    margin: 0;
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    padding-left: 18px;
+
+  }
+  
+  .username, .user-icon {
+  
+    margin: 0;
+    font-family: Arial;
+    font-size: 25px;
+
+  }
+  
+  .username {
+    padding-top: 25px;
+  }
+  .user-icon {
+    padding-top: 15px;
+  }
+
+  .username-icon {
+    margin-left: 0;
+    display: flex;
+    background-color: #e8e8e8;
+    border-bottom: solid #dfdbdb;
+    margin-right: 20px;
+  }
+
+  .div-columns {
+    margin-top: 70px;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    width: 40px;
+    padding-right: 7px;
+    height: 40px;
+    border-radius: 100%;
+  }

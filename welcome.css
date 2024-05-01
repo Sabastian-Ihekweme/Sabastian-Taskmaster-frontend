@@ -1,0 +1,96 @@
+body {
+  position: relative;
+}
+
+.drawings-welcome {
+  display: flex;
+  position: fixed;
+}
+
+.main-div {
+  position: absolute;
+  top: 200px;
+  z-index: 2;
+  padding-bottom: 100px;
+  width: 500px;
+  margin-left: 300px;
+}
+
+.taskmaster-logo {
+  z-index: 1;
+  width: 260px;
+}
+
+.drawing-one {
+  margin-top: 100px;
+  width: 330px;
+  height: 330px;
+}
+
+.drawing-two {
+  width: 220px;
+  height: 200px;
+}
+
+.drawing-three {
+  margin-top: 100px;
+  width: 280px;
+  height: 280px;
+}
+
+.footer {
+  margin-top: 200px;
+}
+
+.container {
+  margin-left: 300px;
+}
+
+h1 {
+  width: 900px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+}
+
+p {
+  font-family: Arial;
+  font-size: 20px;
+  margin-left: 70px;
+  width: 450px;
+}
+
+button {
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 100px;
+  transition: background-color 0.1s;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.451);
+}
+button:active {
+  background-color: black;
+}
+
+.extra-text {
+  font-family: Arial;
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+.avatar {
+  margin-top: 40px;
+  margin-left: 60px;
+  width: 80px;
+  padding-right: 7px;
+  height: 80px;
+  border-radius: 100%;
+}

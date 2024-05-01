@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>
+        Sign up
+    </title>
+    <link rel ="stylesheet" href="sign-up.css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+</head>
+
+<body>
+
+
+
+    <div class="side-image">
+        <img src="drawing-five.png" class="drawing-five">
+    </div>
+    <div class="main-body">
+    <img src="taskmaster-logo.png" class="taskmaster-logo">
+
+    <div class = "wrapper">
+        <div class = "form-box create-account">
+            <h2 style="font-weight:bold;">Create Account</h2>
+            <form action = "#">
+                <div class="name">
+         
+                <div class = "input-box">
+                    <span class = "icon"></span>
+                    <span class="label">Choose User Name</span>
+                    <input class="username" type = "Name" required>
+                </div>
+            </div>
+                <div class = "input-box">
+                    <span class = "icon"></span>
+                    <span class="label">Email</span>
+                    <input class="email" type = "email" required>
+                </div>
+                <div class = "input-box">
+                    <span class = "icon"></span>
+                    <span class="label">Choose Password</span>
+                    <input class="password" type = "password" required>
+                </div>
+                <a href="login-page.html"><button type="submit" class = "btn" onClick="createAccount();">Create Account</button></a>
+                <div class = "create Account-login">
+                    <p>Don't have an account?
+                        <a href="login-page.html" class = "login-link">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+<script>
+
+let accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+        let usernameInput = document.querySelector('.username');
+        let emailInput = document.querySelector('.email');
+        let passwordInput = document.querySelector('.password');
+
+        function createAccount() {
+            let account = {
+                username: usernameInput.value,
+                email: emailInput.value,
+                password: passwordInput.value
+            };
+            accounts.push(account);
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            alert('Account has been created');
+            console.log(`Account Created\n\nAccount details:\nUsername: ${account.username}\nEmail: ${account.email}\nPassword: ${account.password}`);
+            window.location.href = 'login-page.html'; // Redirect to login page
+        }
+
+        console.log(accounts);
+
+   
+</script>
+</body>
+</html>

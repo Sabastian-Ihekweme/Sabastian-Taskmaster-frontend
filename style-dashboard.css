@@ -1,0 +1,223 @@
+html, body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  z-index: 2;
+  display: flex;
+  left: 0px;
+  top: 0px;
+  height: 70px;
+  background-color: #e8e8e8;
+  border-bottom: solid #dfdbdb;
+}
+
+.taskmaster-logo {
+  width: 198px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 85%;
+  min-width: 300px;
+}
+
+.user-icon {
+  margin: 0;
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+  padding-left: 18px;
+}
+
+.username, .user-icon {
+
+  margin: 0;
+  font-family: Arial;
+  font-size: 25px;
+}
+
+.username {
+  padding-top: 25px;
+}
+.user-icon {
+  padding-top: 15px;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  min-width: 198px;
+  max-width: 198px;
+  width: 20%;
+  background-color: #e8e8e8;
+  border-right:  solid #dfdbdb; 
+}
+
+
+.sidebar-button {
+  width: 100%;
+  height: 60px;
+  margin-top: 8px;
+  background-color: #e8e8e8;
+  border: none;
+  border-bottom: solid #dfdbdb; 
+  border-top: solid #dfdbdb; 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  transition: background-color 0.1s;
+  cursor: pointer;
+}
+.sidebar-button:hover {
+  background-color: #dfdbdb; 
+}
+
+.dashboard {
+  margin-left: 230px;
+  margin-bottom: 40px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  height: 157px;
+  z-index: 1;
+  margin-top: auto;
+
+}
+
+.layer-one-footer {
+  padding-top: 23px;
+  display: flex;
+  width: 100%;
+  font-family: arial;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.layer-two-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.instagram-icon, .x-icon, .tiktok-icon{
+  padding-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+.layer-three-footer {
+  display: flex;
+  justify-content: center;
+  font-family: Arial;
+  font-size: 14px;
+  color: rgb(213, 213, 213);
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
+
+h2 {
+  font-family: Arial;
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.task-count {
+  font-size: 50px;
+  color: green;
+  transition: color 0.3s;
+}
+.task-count:hover {
+  color: rgba(0, 128, 0, 0.57);
+}
+.comment {
+  padding-top: 10px;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: underline;
+}
+
+.task-div {
+  margin-top: 40px;
+  background-color: black;
+  width: 550px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: Arial;
+  font-size: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 100px;
+  margin-bottom: 15px;
+}
+
+
+.task-list {
+  z-index: 1;
+  width: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial;
+  font-size: 18px;
+}
+
+.task-name {
+  padding-left: 20px;
+  width: 60%;
+}
+
+.important, .medium, .trivial {
+  margin-right: 10%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 18px;
+  transition: background-color 0.3s;
+}
+.important {
+  background-color: red;
+}
+.medium {
+  background-color: yellow;
+}
+.trivial {
+  background-color: green;
+}
+.important:hover {
+  background-color: rgba(255, 0, 0, 0.495);
+}
+.medium:hover {
+  background-color: rgba(255, 255, 0, 0.516);
+}
+.trivial:hover {
+  background-color: rgba(0, 128, 0, 0.419);
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  padding-right: 7px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+

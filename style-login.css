@@ -1,0 +1,121 @@
+.taskmaster-logo-login {
+  position: fixed;
+  top: 5px;
+  left: 2px;
+  width: 230px;
+}
+
+.login-div {
+  position: absolute;
+  color: white;
+  background-color: black;
+  height: 420px;
+  width: 420px;
+  border-radius: 30px;
+  z-index: 1;
+  margin-left: 500px;
+  top: 180px;
+  box-shadow: 0px 0px 2px 2px rgb(66, 66, 66);
+}
+
+.drawings-login {
+  position: fixed;
+  margin-left: 200px;
+}
+
+.drawing-seven, .drawing-six, .drawing-four, .drawing-five  {
+  width: 320px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.drawing-seven, .drawing-four {
+  padding-left: 200px;
+}
+
+.drawing-seven {
+  padding-bottom: 150px;
+}
+
+.layer-one-login {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 25px;
+  align-self: center;
+  padding-left: 176px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.username, .password {
+  outline: none;
+  margin-left: 34px;
+  width: 80%;
+  height: 45px;
+  margin-top: 13px;
+  border-radius: 100px;
+  border: none;
+  font-family: Arial;
+  font-size: 16px;
+  padding-left: 18px;
+}
+
+.user-icon, .password-icon {
+  z-index: 1;
+  position: fixed;
+  width: 3px;
+  left: 50px;
+}
+
+.layer-three-login {
+  margin-top: 18px;
+}
+.remember-me {
+  margin-top: 10px;
+  font-family: Arial;
+  margin-left: 34px;
+}
+
+.layer-four-login {
+  padding-top: 18px;
+}
+
+.login-button {
+  background-color: white;
+  width: 87%;
+  height: 55px;
+  border-radius: 100px;
+  margin-left: 30px;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: solid white;
+  transition: background-color 0.2s;
+  transition: border 0.2s;
+  transition: color 0.2s;
+}
+.login-button:hover {
+  background-color: black;
+  border: solid white;
+  color: white;
+}
+.login-button:active {
+  color: rgb(218, 217, 217);
+  border: solid rgb(218, 217, 217);
+}
+
+.layer-five-login {
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 100px;
+  font-family: Arial;
+}
+
+.sign-up-button {
+  text-decoration: none;
+  color: rgb(38, 38, 228);
+  cursor: pointer;
+}
+
+

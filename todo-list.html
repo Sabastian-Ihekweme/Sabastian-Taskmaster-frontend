@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To-do List</title>
+        <link rel="stylesheet" href="style-todo.css">
+        <link rel="icon" href="logo2.png" type="image/x-icon">
+        <link rel="stylesheet" href="style-general.css">
+
+      </head>
+    <body>
+
+      <div class="header">
+        <div class="logo">
+        <a href="dashboard.html">
+        <img src="taskmaster-logo.png" class="taskmaster-logo">
+        </a>
+        </div>
+        <div class="username-icon">
+        <p class="username"><span class="User">User</span></p><img src="user-icon.png" class="user-icon">
+        </div>
+      </div>
+
+  <a href="manage-tasks.html">
+    <a href="manage-tasks.html"><button class="back-button">Back</button></a>   </a>
+
+
+    <div class="todolist-body">
+      <h1>TO-DO LIST</h1>
+
+        <div class="add-todo">
+           
+          <input type="text" placeholder="To-do name" class="todo-name">
+          <input type="date" class="todo-date">
+          
+          <div class="select-priority">
+            <input type="radio" name="important" class="important" id="important">
+            <label for="important" class="important">Important</label>
+
+            <input type="radio"  name="importance" class="medium" id="medium">
+            <label for="medium" class="medium">Medium</label>
+
+            <input type="radio"  name="importance" class="trivial" id="trivial">
+            <label for="trivial" class="trivial">Trivial</label>
+
+          </div>
+
+          <button class="add-button" onClick="addTask();">+</button>
+
+          <hr style="margin-top: 50px;"class="horizontal-line">
+          <hr class="horizontal-line">
+
+        </div>
+
+        <div class="todo-list">
+
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Retrieve tasks and completedTasks arrays from localStorage (if they exist)
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  let completedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
+
+  // Get the input elements
+  let todoName = document.querySelector('.todo-name');
+  let todoDate = document.querySelector('.todo-date');
+  let important = document.getElementById('important');
+  let medium = document.getElementById('medium');
+  let trivial = document.getElementById('trivial');
+
+  // Function to add a new task
+  function addTask() {
+    // Check if all fields are filled
+    if (!todoName.value || !todoDate.value || (!important.checked && !medium.checked && !trivial.checked)) {
+      alert('Please fill out all fields and select a priority level!');
+      return;
+    }
+
+    // Determine the priority level
+    let priority = '';
+    if (important.checked) {
+      priority = 'important';
+    } else if (medium.checked) {
+      priority = 'medium';
+    } else if (trivial.checked) {
+      priority = 'trivial';
+    }
+
+    // Create a new task object
+    let newTask = {
+      name: todoName.value,
+      date: todoDate.value,
+      priority: priority
+    };
+
+    // Add the task to the tasks array
+    tasks.push(newTask);
+
+    // Save tasks array to localStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    // Render the task on the DOM
+    renderTask(newTask);
+
+    // Clear the input fields
+    todoName.value = '';
+    todoDate.value = '';
+    important.checked = false;
+    medium.checked = false;
+    trivial.checked = false;
+  }
+
+  // Function to render a task on the DOM
+  function renderTask(task) {
+    let todoList = document.querySelector('.todo-list');
+
+    let taskBox = document.createElement('div');
+    taskBox.classList.add('task-box');
+
+    // Construct the HTML for the task box
+    taskBox.innerHTML = `
+      <div class="importance">
+        <button class="${task.priority}-button"></button>
+        ${task.priority}
+      </div>
+      <p class="description">${task.name}</p>
+      <p class="due-date">Due ${task.date}</p>
+      <button class="complete-button">Complete</button>
+      <button class="delete-button">&#x1F5D1;</button>
+    `;
+
+    // Add event listener to the complete button
+    let completeButton = taskBox.querySelector('.complete-button');
+    completeButton.addEventListener('click', function() {
+      moveTaskToCompleted(task);
+    });
+
+    // Add event listener to the delete button
+    let deleteButton = taskBox.querySelector('.delete-button');
+    deleteButton.addEventListener('click', function() {
+      removeTask(task);
+    });
+
+    // Append the task box to the todo list
+    todoList.appendChild(taskBox);
+  }
+
+  // Function to remove a task from the tasks array
+  function removeTask(task) {
+    let index = tasks.indexOf(task);
+    if (index !== -1) {
+      tasks.splice(index, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasks)); // Save updated tasks array
+      renderTasks();
+    }
+  }
+
+  // Function to move a task to the completedTasks array
+  function moveTaskToCompleted(task) {
+    let index = tasks.indexOf(task);
+    if (index !== -1) {
+      let removedTask = tasks.splice(index, 1)[0];
+      completedTasks.push(removedTask);
+      localStorage.setItem('tasks', JSON.stringify(tasks)); // Save updated tasks array
+      localStorage.setItem('completedTasks', JSON.stringify(completedTasks)); // Save updated completedTasks array
+      renderTasks();
+    }
+  }
+
+  // Function to render all tasks
+  function renderTasks() {
+    let todoList = document.querySelector('.todo-list');
+    todoList.innerHTML = ''; // Clear existing tasks
+    tasks.forEach(task => renderTask(task)); // Render each task
+  }
+
+  // Add event listener for the add button
+  let addButton = document.querySelector('.add-button');
+  addButton.addEventListener('click', addTask);
+
+  // Render tasks when the page loads
+  renderTasks();
+});
+
+          
+    </script>
+    </body>
+
+</html>
